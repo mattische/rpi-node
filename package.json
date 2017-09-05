@@ -1,0 +1,24 @@
+{
+  "name": "rpi-node",
+  "version": "1.0.0",
+  "description": "example",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mattische/rpi-node.git"
+  },
+  "author": "mattische",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mattische/rpi-node/issues"
+  },
+  "homepage": "https://github.com/mattische/rpi-node#readme",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "child-process": "^1.0.2",
+    "express": "^4.15.4"
+  }
+}
