@@ -35,7 +35,7 @@ app.get("/ip", function(req, res) {
 
   Rpi.ip(function(ipData) {
     ipv4 = ipData[0].substring(6, ipData[0].length);
-    ipv6 = ipData[1].substring(7, ipData[7].length);
+    ipv6 = ipData[1].substring(7, ipData[1].length);
     
     res.send({ip_adresses: {inet: ipv4, inet6: ipv6}});
   });
