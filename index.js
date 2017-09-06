@@ -29,7 +29,7 @@ app.get("/uname", function(req, res) {
 });
 
 //Route /ip
-//Returns wlan0 ip v4-, and ip v6-adresses
+//Returns wlan0 ip v4-, and ip v6-adresses for wlan0
 app.get("/ip", function(req, res) {
   console.log("ip route hit...");
 
@@ -42,7 +42,7 @@ app.get("/ip", function(req, res) {
 });
 
 //Route /ipv4
-//Returns ip v4-adress
+//Returns ip v4-adress for wlan0
 app.get("/ipv4", function(req, res) {
   console.log("ipv4 route hit...");
 
@@ -50,6 +50,17 @@ app.get("/ipv4", function(req, res) {
     ipv4 = ipData[0].substring(5, ipData[0].length);
     
     res.send({inet: ipv4});
+  });
+});
+
+
+//Route /essid
+//Returns essid for wlan0
+app.get("/essid", function(req, res){
+  console.log("essid route hit...");
+
+  Rpi.essid(function(essidData){
+    res.send({essid: essidData});
   });
 });
 
