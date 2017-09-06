@@ -65,6 +65,14 @@ app.get("/essid", function(req, res){
   });
 });
 
+ap.get("/uptime", function(req, res) {
+  console.log("uptime route hit...");
+
+  Rpi.uptime(function(upData) {
+    res.send({uptime: upData});
+  });
+});
+
 app.get("/", function(req, res) {
   res.send("hey");
 });
