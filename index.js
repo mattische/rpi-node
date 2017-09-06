@@ -33,6 +33,6 @@ app.get("/", function(req, res) {
 
 app.listen(3000, function() {
   console.log("server started");
-  console.log("cpu temp; " + Rpi.get_temp());
+  console.log("cpu temp; " + Rpi.get_temp);
 
 });
