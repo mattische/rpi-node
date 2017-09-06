@@ -28,6 +28,15 @@ app.get("/uname", function(req, res) {
   });
 });
 
+//Route /ip
+//Returns ip v4-, and ip v6-adresses
+app.get("/ip", function(req, res) {
+  console.log("ip route hit...");
+
+  Rpi.ip(function(ipData) {
+    res.send({ipadresses: ipData});
+  });
+});
 
 app.get("/", function(req, res) {
   res.send("hey");
