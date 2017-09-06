@@ -60,7 +60,8 @@ app.get("/essid", function(req, res){
   console.log("essid route hit...");
 
   Rpi.essid(function(essidData){
-    res.send({essid: essidData});
+    es = essidData[0].substring(6, essidData.length-2);
+    res.send({essid: es});
   });
 });
 
