@@ -9,7 +9,8 @@ var app = Express();
 app.use(Bodyparser.json());
 app.use(Bodyparser.urlencoded({ extended: true }));
 
-
+//Route /temp
+//Returns CPU temperature
 app.get("/temp", function(req, res) {
   console.log("temp route hit...");
   Rpi.temp(function(tempData) {
@@ -17,6 +18,8 @@ app.get("/temp", function(req, res) {
   });
 });
 
+//Route /uname
+//Returns uname -a (proc architecture etc)
 app.get("/uname", function(req, res) {
   console.log("uname route hit...");
 
