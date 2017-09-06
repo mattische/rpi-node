@@ -12,7 +12,10 @@ app.use(Bodyparser.urlencoded({ extended: true }));
 
 app.get("/temp", function(req, res) {
   console.log("temp route hit...");
-
+  Rpi.temp(function(tempData) {
+    console.log(tempData);
+  });
+  /**
   child = Exec("cat /sys/class/thermal/thermal_zone0/temp", function (err, stdout, stderr) {
     if (err !== null) {
        console.log("Error reading temp: " + err);
@@ -22,6 +25,7 @@ app.get("/temp", function(req, res) {
        res.send(JSON.stringify({temperature: temp }));
     }
   });
+  **/
 
 });
 
@@ -33,7 +37,5 @@ app.get("/", function(req, res) {
 
 app.listen(3000, function() {
   console.log("server started");
-  Rpi.temp(function(tempData) {
-    console.log(tempData);
-  });
+  
 });
