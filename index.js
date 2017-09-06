@@ -17,6 +17,14 @@ app.get("/temp", function(req, res) {
   });
 });
 
+app.get("/uname", function(req, res) {
+  console.log("uname route hit...");
+
+  Rpi.uname(function(unameData) {
+    res.send({uname: unameData});
+  });
+});
+
 
 app.get("/", function(req, res) {
   res.send("hey");
