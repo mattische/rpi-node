@@ -65,11 +65,25 @@ app.get("/essid", function(req, res){
   });
 });
 
+
+//Route /uptime
+//Returns uptime of RPi
 app.get("/uptime", function(req, res) {
   console.log("uptime route hit...");
 
   Rpi.uptime(function(upData) {
     res.send({uptime: upData});
+  });
+});
+
+
+//Route /date
+//Returns date on machine
+app.get("/date", function(req, res){
+  console.log("date route hit...");
+
+  Rpi.serverDate(function(dateData) {
+    res.send({date: dateData});
   });
 });
 
