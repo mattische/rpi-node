@@ -34,8 +34,10 @@ app.get("/ip", function(req, res) {
   console.log("ip route hit...");
 
   Rpi.ip(function(ipData) {
-
-    res.send({ip_adresses: {ipv4: ipData[0], ipv6: ipData[1]}});
+    ipv4 = ipData[0].substring(6, ipData[0].length);
+    ipv6 = ipData[1].substring(7, ipData[7].length);
+    
+    res.send({ip_adresses: {inet: ipv4, inet6: ipv6}});
   });
 });
 
