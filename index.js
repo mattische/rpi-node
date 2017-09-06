@@ -14,7 +14,7 @@ app.use(Bodyparser.urlencoded({ extended: true }));
 app.get("/temp", function(req, res) {
   console.log("temp route hit...");
   Rpi.temp(function(tempData) {
-    res.send({temperature: tempData});
+    res.send({rpi_cpu_temperature: tempData});
   });
 });
 
