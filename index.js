@@ -29,7 +29,7 @@ app.get("/uname", function(req, res) {
 });
 
 //Route /ip
-//Returns ip v4-, and ip v6-adresses
+//Returns wlan0 ip v4-, and ip v6-adresses
 app.get("/ip", function(req, res) {
   console.log("ip route hit...");
 
@@ -41,10 +41,10 @@ app.get("/ip", function(req, res) {
   });
 });
 
-//Route /ip
+//Route /ipv4
 //Returns ip v4-adress
 app.get("/ipv4", function(req, res) {
-  console.log("ip route hit...");
+  console.log("ipv4 route hit...");
 
   Rpi.ip(function(ipData) {
     ipv4 = ipData[0].substring(5, ipData[0].length);
