@@ -41,6 +41,18 @@ app.get("/ip", function(req, res) {
   });
 });
 
+//Route /ip
+//Returns ip v4-adress
+app.get("/ipv4", function(req, res) {
+  console.log("ip route hit...");
+
+  Rpi.ip(function(ipData) {
+    ipv4 = ipData[0].substring(5, ipData[0].length);
+    
+    res.send({inet: ipv4});
+  });
+});
+
 app.get("/", function(req, res) {
   res.send("hey");
 });
