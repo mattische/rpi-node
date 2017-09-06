@@ -13,20 +13,8 @@ app.use(Bodyparser.urlencoded({ extended: true }));
 app.get("/temp", function(req, res) {
   console.log("temp route hit...");
   Rpi.temp(function(tempData) {
-    console.log(tempData);
+    res.send({temperature: tempData});
   });
-  /**
-  child = Exec("cat /sys/class/thermal/thermal_zone0/temp", function (err, stdout, stderr) {
-    if (err !== null) {
-       console.log("Error reading temp: " + err);
-    } 
-    else {
-      var temp = parseFloat(stdout)/1000;
-       res.send(JSON.stringify({temperature: temp }));
-    }
-  });
-  **/
-
 });
 
 
